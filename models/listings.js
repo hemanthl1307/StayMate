@@ -11,7 +11,8 @@ const listingSchema=new Schema({
     },
     image:{
         type:String,
-        set:(v)=>v===""? "images\img2.jpg":v,
+        default:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtMua49c7AM02O5HxcpnE1XnRmcob1tkBAM_VON551hqbwBx7NgpfovH0&s=10",
+        set:(v)=> v==="" ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtMua49c7AM02O5HxcpnE1XnRmcob1tkBAM_VON551hqbwBx7NgpfovH0&s=10":v,
     },
     price:{
         type:Number
@@ -19,7 +20,11 @@ const listingSchema=new Schema({
     location:{
         type:String
     },
-    state:{
+    category:{
+        type:String,
+        required:true
+    },
+    State:{
         type:String
     }
 });
