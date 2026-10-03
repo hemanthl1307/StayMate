@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+.brand {
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.brand span ,i {
+  color: #8b5cf6;
+}  
+.topbar {
+  position: sticky;
+  top: 0;
+  background: white;
+  border-bottom: 1px solid #e6ebea;
+  z-index: 100;
+  border-bottom: 2px solid #7c3aed;
+}
+#head1{
+    color:black;
+}
+.topbar-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 800;
+  color: #4f46e5;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+
+.menu a:hover {
+  color: #8b5cf6;
+}
+
+.auth {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.menu a.btn-login {
+  border: 1px solid #ddd;
+  padding: 9px 20px;
+  border-radius: 30px;
+}
+
+.menu a.btn-signup {
+  background: #7c3aed;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+
+.menu a.btn-signup:hover {
+  background: #4038c4;
+  color: white;
+}
+
+#menu-check {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 18px;
+    border-bottom: 1px solid #e6ebea;
+  }
+
+  #menu-check:checked ~ .menu {
+    display: flex;
+  }
+
+  .auth {
+    margin-left: 0;
+  }
+}
