@@ -15,7 +15,8 @@ const listingSchema=new Schema({
         set:(v)=> v==="" ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtMua49c7AM02O5HxcpnE1XnRmcob1tkBAM_VON551hqbwBx7NgpfovH0&s=10":v,
     },
     price:{
-        type:Number
+        type:Number,
+        required:true,
     },
     location:{
         type:String
