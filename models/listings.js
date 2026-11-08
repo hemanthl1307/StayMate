@@ -27,7 +27,13 @@ const listingSchema=new Schema({
     },
     State:{
         type:String
-    }
+    },
+    reviews:[
+        {
+            type:Schema.Types.ObjectId,
+            ref:"Review"
+        }
+    ]
 });
 
 const Listing=mongoose.model("Listing",listingSchema);

@@ -1,28 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StayMate</title>
-</head>
-<body>
-    <h3>Create New Listing</h3>
-    <form method="POST" action="/listings">
-        <input type="text" name="listing[title]" placeholder="Enter title"/>
-        <br><br>
-        <textarea name="listing[description]" placeholder="Enter description"></textarea>
-        <br><br>
-        <input name="listing[image]" type="text" placeholder="Enter image URL/Link">
-        <br><br>
-        <input name="listing[location]" type="text" placeholder="Enter location">
-        <br><br>
-        <input name="listing[State]" type="text" placeholder="Enter state">
-        <br><br>
-        <input name="listing[category]" type="text" placeholder="Enter category">
-        <br><br>
-        <input name="listing[price]" type="number" placeholder="Enter price">
-        <br><br>
-        <button>Add</button>
+<% layout("/layouts/boilerplate.ejs") %>
+    <div class="row">
+        <div class="col-8 offset-2">
+        <br>
+    <h2 style="color:#7c3aed; font-weight:800;">Create New Listing</h2>
+    <br>
+    <form method="POST" action="/listings" data-bs-validate novalidate>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="listing[title]" placeholder="Enter title" class="form-control" required aria-describedby="titleFeedback" required/>
+            <div id="titleFeedback" class="invalid-feedback">Title is required.</div>
+            <div id="descFeedback" class="valid-feedback">Title looks good!</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" placeholder="Enter description" class="form-control"  required aria-describedby="descFeedback" required></textarea>
+            <div id="descFeedback" class="invalid-feedback">Please enter a description</div>
+        </div>
+
+       <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select name="listing[category]" id="category" class="form-select"  required aria-describedby="catFeedback" required>
+            <option value="" selected disabled>Select category</option>    
+            <option value="PG" class="form-select bg-primary-subtle border-primary-subtle text-primary-emphasis">PG</option>
+            <option value="Rooms">Rooms</option>
+            <option value="Hostels" class="form-select bg-primary-subtle border-primary-subtle text-primary-emphasis"   >Hostels</option>
+            </select>
+            <div id="descFeedback" class="invalid-feedback">select category</div>
+        </div>
+
+        <div class="row">
+        <div class="mb-3 col-md-4">
+             <label for="location" class="form-label">Location</label>
+            <input name="listing[location]" type="text" placeholder="Enter location" class="form-control" required aria-describedby="locFeedback"  required>
+            <div id="locFeedback" class="invalid-feedback">Location is required.</div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+             <label for="State" class="form-label">State</label>
+            <input name="listing[State]" type="text" placeholder="Enter state" class="form-control" required aria-describedby="stateFeedback"  required>
+             <div id="stateFeedback" class="invalid-feedback">State is required.</div>
+        </div>
+        </div>
+        
+        <div class="mb-3">
+             <label for="image" class="form-label">Image Link</label>
+            <input name="listing[image]" type="text" placeholder="Enter image URL/Link" class="form-control">
+        </div>
+
+        <div class="mb-3">
+             <label for="price" class="form-label">Price</label>
+            <input name="listing[price]" type="number" placeholder="Enter price" class="form-control" required aria-describedby="priceFeedback" required>
+             <div id="priceFeedback" class="invalid-feedback">Please enter a valid Price</div>
+        </div>
+        <br>
+        <button class="btn allbtn">Add</button>
     </form>
-</body>
-</html>
+    </div>
+</div>

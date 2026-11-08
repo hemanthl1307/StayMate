@@ -4,46 +4,54 @@
             <br>
     <h3 style="color:#7c3aed; font-weight:800;">Edit Listing</h3>
     <br>
-    <form method="POST" action="/listings/<%=listing._id%>?_method=PUT">
+    <form method="POST" action="/listings/<%=listing._id%>?_method=PUT" data-bs-validate novalidate>
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input type="text" name="listing[title]" value="<%=listing.title%>" class="form-control"/>
+            <input type="text" name="listing[title]" value="<%=listing.title%>" class="form-control" required aria-describedby="titleFeedback" required/>
+            <div id="titleFeedback" class="invalid-feedback">Title is required.</div>
+            <div id="descFeedback" class="valid-feedback">Title looks good!</div>
         </div>
 
         <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <textarea name="listing[description]" class="form-control"><%=listing.description%></textarea>
-        </div>
+        <textarea name="listing[description]" class="form-control" required aria-describedby="descFeedback" required><%=listing.description%></textarea>
+        <div id="descFeedback" class="invalid-feedback">Please enter a description</div>
+    </div>
 
        <div class="mb-3">
             <label for="category" class="form-label">Category</label>
-            <select name="listing[category]" id="category" class="form-select">
+            <select name="listing[category]" id="category" class="form-select" required aria-describedby="catFeedback" required>
             <option value="" selected disabled><%=listing.category%></option>    
             <option value="PG" class="form-select bg-primary-subtle border-primary-subtle text-primary-emphasis">PG</option>
             <option value="Rooms">Rooms</option>
             <option value="Hostels" class="form-select bg-primary-subtle border-primary-subtle text-primary-emphasis"   >Hostels</option>
             </select>
+            <div id="descFeedback" class="invalid-feedback">select category</div>
         </div>
         <div class="row">
         <div class="mb-3 col-md-4">
         <label for="location" class="form-label">Location</label>       
-        <input name="listing[location]" type="text" value="<%=listing.location%>" class="form-control">
-        </div>
+        <input name="listing[location]" type="text" value="<%=listing.location%>" class="form-control" required aria-describedby="locFeedback"  required>
+        <div id="locFeedback" class="invalid-feedback">Location is required.</div>
+    </div>
 
         <div class="mb-3 col-md-8">
         <label for="State" class="form-label">State</label> 
-        <input name="listing[State]" type="text" value="<%=listing.State%>" class="form-control">
+        <input name="listing[State]" type="text" value="<%=listing.State%>" class="form-control" required aria-describedby="stateFeedback"  required>
+         <div id="stateFeedback" class="invalid-feedback">State is required.</div>
         </div>
         </div>
 
          <div class="mb-3">
         <label for="image" class="form-label">Image Link</label>    
-        <input name="listing[image]" type="text" value="<%=listing.image%>" class="form-control">
+        <input name="listing[image]" type="text" value="<%=listing.image%>" class="form-control" required aria-describedby="imgFeedback"  required>
+        <div id="imgFeedback" class="invalid-feedback">Please Add image link</div>
         </div>
         
         <div class="mb-3">
         <label for="price" class="form-label">Price</label>        
-        <input name="listing[price]" type="number" value="<%=listing.price%>" class="form-control">
+        <input name="listing[price]" type="number" value="<%=listing.price%>" class="form-control" required aria-describedby="priceFeedback" required>
+        <div id="priceFeedback" class="invalid-feedback">Please enter a valid Price</div>
         </div>
 
         <br>
