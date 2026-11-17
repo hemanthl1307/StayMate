@@ -41,5 +41,23 @@
         <button class="btn">Submit</button>
     </form>
 </div>
+<hr>
+    <h4>Reviews</h4>
+    <h4 class="review-heading">Customer Reviews</h4>
 
-    </div>
+<div class="row">
+    <% for(review of listing.reviews) { %>
+        <div class="review-card card col-5 ms-3 mb-3">
+            <div class="card-body">
+                <div class="review-stars">
+                    <% for(let i = 0; i < review.rating; i++) { %>
+                        ⭐
+                    <% } %>
+            </div>
+                <p class="card-text review-comment">"<%= review.comment %>"</p>
+                <p class="review-rating"><%= review.rating %>/5 Stars</p>
+            </div>
+        </div>
+    <% } %>
+</div>
+</div>

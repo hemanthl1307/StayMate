@@ -78,7 +78,7 @@ app.get("/listings/:id", wrapAsync (async (req,res,next)=>{
     if (!mongoose.isValidObjectId(id)) {
         throw new ExpressError(400, "Invalid listing ID!");
     }
-    const listing=await Listing.findById(id);
+    const listing=await Listing.findById(id).populate("reviews");
     if (!listing) {
     throw new ExpressError(404, "Listing Not found");
     }

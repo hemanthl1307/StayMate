@@ -137,7 +137,43 @@ main {
     background:#7c3aed;
     color:#fff;
 }
+.review-heading {
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #222;
+}
 
+.review-card {
+    border: none !important;
+    border-radius: 12px !important;
+    padding:7px;
+    background-color: #fff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.review-stars {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.review-comment {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.review-rating {
+    color: #7c3aed;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 0;
+}
 @media (max-width:992px){
     .show-title.col-8,
     .show-card.col-6{
